@@ -6,6 +6,8 @@ describe Basket do
         @product1 = Product.new('001', 'Very Cheap Chair', 9.25)
         @product2 = Product.new('002', 'Litte table', 45)
         @product3 = Product.new('003', 'Funky Light', 19.95)
+
+        @@basket = []
     end
 
     it "can apply 10% off when spend over £60" do
