@@ -6,5 +6,4 @@ class Product
         @name = name
         @price = price
     end
-
 end

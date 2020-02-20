@@ -1,5 +1,5 @@
-module Promotion
-    def apply_promotion(basket, total)
+class Promotion
+    def apply_promotion
         fail NotImplementedError, "A promotion class must have a type of promotion"
     end
 end
