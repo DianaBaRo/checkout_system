@@ -1,10 +1,14 @@
+require "pry"
+require "Promotion"
+require "Multi_purchase_promotion"
+require "Large_purchase_promotion"
+
 class Basket
-    attr_reader :promotions
 
     @@basket = []
 
     def initialize
-        @promotions = [Multi_purchase_promotion.new("Very Cheap Chair", 2, 9.25), Large_purchase_promotion.new(60, 10)]
+        @promotions = [Multi_purchase_promotion.new("Very Cheap Chair", 2, 0.75), Large_purchase_promotion.new(60, 10)]
     end
 
     def scan(product)
@@ -12,9 +16,12 @@ class Basket
     end
 
     def total
-        total = @@basket.sum {|product| product.price} 
+        total = 0
+        @@basket.each { |p| total += p.price }
+
         for promotion in @promotions do
-            total_with_discount = promotion.apply_promotion(@@basket, total)
+            total = promotion.apply_promotion(@@basket, total)
         end
+        total.round(2)
     end
 end
