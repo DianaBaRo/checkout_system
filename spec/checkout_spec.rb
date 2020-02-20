@@ -1,6 +1,6 @@
-require 'checkout'
+require 'basket'
 
-describe Checkout do
+describe Basket do
   
     before (:each) do
         @product1 = Product.new('001', 'Very Cheap Chair', 9.25)

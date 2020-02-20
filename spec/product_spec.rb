@@ -1,7 +1,6 @@
 require 'product'
 
 describe Product do
-
     it 'has a code, a name and a price' do
         product = Product.new('001', 'Very Cheap Chair', 9.25)
         expect(product.code).to eq '001'
