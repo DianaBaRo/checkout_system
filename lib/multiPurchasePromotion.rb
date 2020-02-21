@@ -1,11 +1,11 @@
 require "pry"
 
-class Multi_purchase_promotion < Promotion
+class MultiPurchasePromotion < Promotion
 
-    def initialize(name, min_quantity, price)
+    def initialize(name, min_quantity, discount_amount)
         @name = name
         @min_quantity = min_quantity
-        @price = price
+        @discount_amount = discount_amount
     end
     
     def apply_promotion(basket, total)
@@ -13,10 +13,9 @@ class Multi_purchase_promotion < Promotion
         items = basket.select{ |p| p.name==@name }
         
         if items.length >= @min_quantity
-            discount = @price * items.length
+            discount = @discount_amount * items.length
             total -= discount
         end
-
         total
     end
 end

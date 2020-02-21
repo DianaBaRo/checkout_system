@@ -1,7 +1,7 @@
 require "pry"
 require "Promotion"
-require "Multi_purchase_promotion"
-require "Large_purchase_promotion"
+require "MultiPurchasePromotion"
+require "LargePurchasePromotion"
 
 class Basket
 
@@ -9,7 +9,9 @@ class Basket
 
     def initialize
         @basket = []
-        @promotions = [Multi_purchase_promotion.new("Very Cheap Chair", 2, 0.75), Large_purchase_promotion.new(60, 10)]
+        multi = MultiPurchasePromotion.new("Very Cheap Chair", 2, 0.75)
+        large = LargePurchasePromotion.new(60, 10)
+        @promotions = [multi, large]
     end
 
     def scan(product)
