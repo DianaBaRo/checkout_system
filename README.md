@@ -2,10 +2,12 @@
 
 Our client is an online marketplace, here is a sample of some of the products available on our site:
 
-Product code  |      Name         |    Price
-----------------------------------------------------------
+Product code  |   Name            |  Price
+
 001           | Very Cheap Chair  |  £9.25
+
 002           | Little table      |  £45.00
+
 003           | Funky light       |  £19.95
 
 Our marketing team want to offer promotions as an incentive for our customers to purchase these items.
@@ -17,8 +19,11 @@ Our check-out can scan items in any order, and because our promotions will chang
 The interface to our checkout looks like this (shown in Ruby):
 
 co = Checkout​.new​(promotional_rules) 
+
 co​.scan​(item)
+
 co​.scan​(item)
+
 price = co​.total
 
 Implement a checkout system that fulfills these requirements. Do this outside of any frameworks. You should use TDD.
