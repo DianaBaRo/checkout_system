@@ -19,8 +19,11 @@ Our check-out can scan items in any order, and because our promotions will chang
 The interface to our checkout looks like this (shown in Ruby):
 
 co = Checkout​.new​(promotional_rules) 
+
 co​.scan​(item)
+
 co​.scan​(item)
+
 price = co​.total
 
 Implement a checkout system that fulfills these requirements. Do this outside of any frameworks. You should use TDD.
