@@ -1,7 +1,7 @@
 require "pry"
-require "Promotion"
-require "MultiPurchasePromotion"
-require "LargePurchasePromotion"
+require "promotion"
+require "multi_purchase_promotion"
+require "large_purchase_promotion"
 
 class Basket
 
